@@ -4,14 +4,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|name|text|null: false|
+|name|string|null: false|
 |mail|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 
 ### Association
-- has_many :name
-- has_many :mail
-- has_many :password
 - has_many :comments
 
 
@@ -19,11 +16,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|comments|string|foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :comments
-
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -32,8 +28,8 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 
 ## commentsテーブル
