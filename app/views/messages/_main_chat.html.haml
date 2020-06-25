@@ -1,0 +1,41 @@
+.main-chat
+  .main-chat__group-info
+    .main-chat__group-info__left-room
+      .main-chat__group-info__left-room__test-room
+        .main-chat__group-info__left-room__test-room__test
+          test
+        .main-chat__group-info__left-room__test-room__member-name
+          .main-chat__group-info__left-room__test-room__member-names__name
+            Member:masa
+    .main-chat__group-info__edit-room
+      .main-chat__group-info__edit-room__edit
+        Edit
+      
+  .main-chat__message-list
+    .main-chat__message-list__view-room
+      .main-chat__message-list__view-room__items-room
+        .main-chat__message-list__view-room__items-room__three-items
+          .main-chat__message-list__view-room__items-room__three-items__name
+            masa
+          .main-chat__message-list__view-room__items-room__three-items__days
+            2019/11/20(Wed) 17:43:01
+        .main-chat__message-list__view-room__items-room__message
+          おはよう！
+      .main-chat__message-list__view-room__second-items-room
+        .main-chat__message-list__view-room__second-items-room__second-three-items
+          .main-chat__message-list__view-room__second-items-room__second-three-items__second-name
+            masa
+          .main-chat__message-list__view-room__second-items-room__second-three-items__second-days
+            2019/11/20(Wed) 17:43:34
+        .main-chat__message-list__view-room__second-items-room__second-message
+          今日は夜から雨
+
+  .main-chat__message-form
+    .main-chat__message-form__message-box
+      .main-chat__message-form__message-box__type-icon
+        %input{type: 'text', class: "main-chat__message-form__message-box__type", placeholder: "type a message"}
+        %label{class: "main-chat__message-form__message-box__icon"}
+          = icon('far', 'image')
+          %input{type: "file", class:"main-chat__message-form__message-box__icon__icon-file"}
+      .main-chat__message-form__send
+        Send
