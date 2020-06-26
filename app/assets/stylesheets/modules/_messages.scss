@@ -105,18 +105,21 @@
         }
       }
     }
+    &__edit-room{
+      padding-bottom: 28px;
+      &__edit {
+      border:   1px solid;
+      margin-top: 28px;
+      width: 72px;
+      height: 40px;
+      font-size: 16px;
+      padding: 0 20px 0 20px;
+      line-height: 40px;
+      text-decoration: none;
+      color: #38aef0;
+      }
+    }
   }
-          &__edit-room__edit {
-            border:   1px solid;
-            margin-top: 28px;
-            width: 72px;
-            height: 40px;
-            font-size: 16px;
-            padding: 0 20px 0 20px;
-            line-height: 40px;
-            text-decoration: none;
-            color: #38aef0;
-          }
     &__message-list {
     background-color: #fafafa;
     height: calc(100vh - 190px);
