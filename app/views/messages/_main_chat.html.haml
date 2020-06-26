@@ -33,9 +33,9 @@
   .main-chat__message-form
     .main-chat__message-form__message-box
       .main-chat__message-form__message-box__type-icon
-        %input{type: 'text', class: "main-chat__message-form__message-box__type", placeholder: "type a message"}
-        %label{class: "main-chat__message-form__message-box__icon"}
+        %input{type: 'text', class: "main-chat__message-form__message-box__type-icon__type", placeholder: "type a message"}
+        %label{class: "main-chat__message-form__message-box__type-icon__icon"}
           = icon('far', 'image')
-          %input{type: "file", class:"main-chat__message-form__message-box__icon__icon-file"}
-      .main-chat__message-form__send
+          %input{type: "file", class:"main-chat__message-form__message-box__type-icon__icon__icon-file"}
+      .main-chat__message-form__message-box__send
         Send

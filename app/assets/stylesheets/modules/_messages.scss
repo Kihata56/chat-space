@@ -28,11 +28,11 @@
         color: #ffffff;
       }
 
-      .side-bar__user-name__items__items-icons {
+      &__items-icons {
         width: 60px;
         display: flex;
         justify-content: flex-end;
-   
+  
         &__left-icons {
           color: #ffffff;
           margin-right: 5px;
@@ -60,7 +60,7 @@
         padding-top: 20px;
       }
 
-      .side-bar__group-list__group__group-message {
+      &__group-message {
         color: #ffffff;
         font-size: 11px;
         padding-top: 5px;
@@ -95,7 +95,7 @@
           width: 200px;
         }
 
-        .main-chat__group-info__left-room__test-room__member-names {
+        &__member-names {
           display: flex;
 
           &__name {
@@ -106,7 +106,7 @@
       }
     }
   }
-          .main-chat__group-info__edit-room__edit {
+          &__edit-room__edit {
             border:   1px solid;
             margin-top: 28px;
             width: 72px;
@@ -117,7 +117,7 @@
             text-decoration: none;
             color: #38aef0;
           }
-    .main-chat__message-list {
+    &__message-list {
     background-color: #fafafa;
     height: calc(100vh - 190px);
     color: #38aef0;
@@ -140,7 +140,7 @@
               padding-left: 10px;
             }
         }
-        .main-chat__message-list__view-room__items-room__message {
+        &__message {
           color: #434A54;
           font-size: 14px;
           margin-top: 12px;
@@ -154,13 +154,13 @@
             color: #333333;
             font-size: 16px;
           }
-          .main-chat__message-list__view-room__second-items-room__second-three-items__second-days {
+          &__second-days {
             color: #999999;
               font-size: 12px; 
               padding-left: 10px;
           }
         }
-        .main-chat__message-list__view-room__second-items-room__second-message {
+        &__second-message {
           color: #434A54;
           font-size: 14px;
           margin-top: 12px;
@@ -168,7 +168,7 @@
       }
     }
   }
-  .main-chat__message-form {
+  &__message-form {
   background-color: #d2d2d2;
   height: 90px;
   display: flex;
@@ -188,7 +188,7 @@
         margin-right: 15px;
         background-color: #fafafa;
 
-        .main-chat__message-form__message-box__type {
+        &__type{
         width: 100%;
         color: #999999;
         border-style: none;
@@ -196,7 +196,7 @@
         padding: 0 0 0 10px;
         }
         
-        .main-chat__message-form__message-box__icon {
+        &__icon {
           height: 50px;
           justify-content: end;
           display: flex;
@@ -204,13 +204,13 @@
           position: relative;
           font-size: 25px;      
           padding: 0 10px 0 0;
-          .main-chat__message-form__message-box__icon__icon-file {
+          &__icon-file {
             display: none;
             position: absolute;
           }
         }      
       }
-      .main-chat__message-form__send {
+      &__send {
         background-color: #38aef0;
         padding: 0 30px;
         display: flex;
