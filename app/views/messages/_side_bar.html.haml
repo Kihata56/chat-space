@@ -2,12 +2,13 @@
   .side-bar__user-name
     .side-bar__user-name__items
       .side-bar__user-name__items__items-name
-        %h1 masa
+        = current_user.name
       .side-bar__user-name__items__items-icons
         .side-bar__user-name__items__items-icons__left-icons
           = icon('far', 'edit')
         .side-bar__user-name__items__items-icons__right-icons
-          = icon('fas', 'cog')
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog')
 
   .side-bar__group-list
     .side-bar__group-list__group
