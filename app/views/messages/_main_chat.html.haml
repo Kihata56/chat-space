@@ -3,39 +3,24 @@
     .main-chat__group-info__left-room
       .main-chat__group-info__left-room__test-room
         .main-chat__group-info__left-room__test-room__test
-          test
+          = @group.name
         .main-chat__group-info__left-room__test-room__member-name
           .main-chat__group-info__left-room__test-room__member-names__name
-            Member:masa
+            - @group.users.each do |user|
+              = user.name
     .main-chat__group-info__edit-room
       .main-chat__group-info__edit-room__edit
-        Edit
+        = link_to edit_group_path(@group), class: "main-chat__group-info__edit-room__edit__edit-text" do
+          Edit
       
   .main-chat__message-list
-    .main-chat__message-list__view-room
-      .main-chat__message-list__view-room__items-room
-        .main-chat__message-list__view-room__items-room__three-items
-          .main-chat__message-list__view-room__items-room__three-items__name
-            masa
-          .main-chat__message-list__view-room__items-room__three-items__days
-            2019/11/20(Wed) 17:43:01
-        .main-chat__message-list__view-room__items-room__message
-          おはよう！
-      .main-chat__message-list__view-room__second-items-room
-        .main-chat__message-list__view-room__second-items-room__second-three-items
-          .main-chat__message-list__view-room__second-items-room__second-three-items__second-name
-            masa
-          .main-chat__message-list__view-room__second-items-room__second-three-items__second-days
-            2019/11/20(Wed) 17:43:34
-        .main-chat__message-list__view-room__second-items-room__second-message
-          今日は夜から雨
-
+    = render @messages
   .main-chat__message-form
-    .main-chat__message-form__message-box
-      .main-chat__message-form__message-box__type-icon
-        %input{type: 'text', class: "main-chat__message-form__message-box__type-icon__type", placeholder: "type a message"}
-        %label{class: "main-chat__message-form__message-box__type-icon__icon"}
-          = icon('far', 'image')
-          %input{type: "file", class:"main-chat__message-form__message-box__type-icon__icon__icon-file"}
-      .main-chat__message-form__message-box__send
-        Send
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .main-chat__message-form__message-box
+        .main-chat__message-form__message-box__type-icon
+          = f.text_field :content, class: 'main-chat__message-form__message-box__type-icon__type', placeholder: 'type a message'
+          = f.label :image, class: 'main-chat__message-form__message-box__type-icon__icon' do
+            = icon('far', 'image')
+            = f.file_field :image, class: 'main-chat__message-form__message-box__type-icon__icon__icon-file'
+        = f.submit 'Send', class: 'main-chat__message-form__message-box__send'  
