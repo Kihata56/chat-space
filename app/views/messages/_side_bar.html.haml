@@ -4,18 +4,16 @@
       .side-bar__user-name__items__items-name
         = current_user.name
       .side-bar__user-name__items__items-icons
-        .side-bar__user-name__items__items-icons__left-icons
-          = link_to new_group_path do
-            = icon('far', 'edit')
-        .side-bar__user-name__items__items-icons__right-icons
-          = link_to edit_user_path(current_user) do
-            = icon('fas', 'cog')
+        = link_to new_group_path, class: "side-bar__user-name__items__items-icons__left-icons" do
+          = icon('far', 'edit')
+        = link_to edit_user_path(current_user), class: "side-bar__user-name__items__items-icons__right-icons" do
+          = icon('fas', 'cog')
 
   .side-bar__group-list
     - current_user.groups.each do |group|
       .side-bar__group-list__group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .side-bar__group-list__group__group-name
             = group.name 
       .side-bar__group-list__group__group-message
-        まだメッセージがありません     
+        = group.show_last_message     
