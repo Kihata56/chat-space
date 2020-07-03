@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="main-chat__message-list__view-room">
+        `<div class="main-chat__message-list__view-room" data-message-id=${message.id}>
           <div class="main-chat__message-list__view-room__items-room">
             <div class="main-chat__message-list__view-room__items-room__three-items">
               <div class="main-chat__message-list__view-room__items-room__three-items__name">
@@ -22,7 +22,7 @@ $(function(){
         return html;
       } else {
       let html =
-      `<div class="main-chat__message-list__view-room">
+      `<div class="main-chat__message-list__view-room" data-message-id=${message.id}>
         <div class="main-chat__message-list__view-room__items-room">
           <div class="main-chat__message-list__view-room__items-room__three-items">
             <div class="main-chat__message-list__view-room__items-room__three-items__name">
@@ -56,13 +56,14 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $(".main-chat__message-form__message-box__send").prop("disabled", false);
       $('.main-chat__message-list').append(html);
-      $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});      
       $('form')[0].reset();
+      $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});      
+      $('.main-chat__message-form__message-box__send').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.main-chat__message-form__message-box__send').prop("disabled", false);
     });  
   })
 });
