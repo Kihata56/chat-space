@@ -49,10 +49,14 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
 
+
     &__group {
       align-items: center;
       flex-direction: column;
       padding-left: 20px;
+      a {
+        text-decoration: none;
+      }
 
       &__group-name {
         color: #ffffff;
